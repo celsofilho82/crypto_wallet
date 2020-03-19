@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @coin.description %>
-</p>
+<form>
+  <fieldset disabled>
+    <div class="form-group">
+      <%= label_tag nil, "Moeda" %>
+      <%= text_field_tag nil, @coin.description, class:"form-control" %>
+    </div>
 
-<p>
-  <strong>Acronym:</strong>
-  <%= @coin.acronym %>
-</p>
+    <div class="form-group">
+      <%= label_tag nil, "Sigla" %>
+      <%= text_field_tag nil, @coin.acronym, class:"form-control" %>
+    </div>
 
-<p>
-  <strong>Url image:</strong>
-  <%= @coin.url_image %>
-</p>
+    <div class="form-group">
+      <%= label_tag nil, "Url da Imagem" %>
+      <%= text_field_tag nil, @coin.url_image, class:"form-control" %>
+    </div>
 
-<%= link_to 'Edit', edit_coin_path(@coin) %> |
-<%= link_to 'Back', coins_path %>
+    <div class="form-group">
+      <%= label_tag nil, "Tipo de Mineração" %>
+      <%= text_field_tag nil, @coin.mining_type.description, class:"form-control" %>
+    </div>
+  </fieldset>
+</form>
+
+<%= link_to 'Edit', edit_coin_path(@coin), class:"btn btn-primary" %>
+<%= link_to 'Back', coins_path, class:"btn btn-primary" %>

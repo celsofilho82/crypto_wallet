@@ -6,10 +6,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="container-fluid">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <%= link_to "HOME", root_path, class:"btn btn-primary"%>
+        </li>
+      </ul>
+    </div>
     <%= yield %>
   </body>
+
 </html>
